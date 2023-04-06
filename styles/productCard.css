@@ -19,6 +19,12 @@
     }
 }
 
+@media (max-width: 600px) {
+    .shop-container{
+        grid-template-columns: repeat(2,200px);
+    }
+    
+}
 @media (max-width: 500px) {
     .shop-container{
         grid-template-columns: repeat(2,200px);
@@ -27,13 +33,13 @@
 }
 @media (max-width: 450px) {
     .shop-container {
-        grid-template-columns: repeat(2,150px);
+        grid-template-columns: repeat(2,140px);
     }
     
 }
 @media (max-width: 300px) {
     .shop-container {
-        grid-template-columns: repeat(2,120px);
+        grid-template-columns: repeat(1,150px);
     }
     
 }
@@ -47,8 +53,8 @@
 }
 
 .item img{
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    height: auto;
     border-radius: 6%;
 }
 

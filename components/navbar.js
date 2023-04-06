@@ -1,7 +1,7 @@
-const handleNavbar = document.getElementById("navbar");
+const getNavbar = document.getElementById("navbar");
 
 let navbar = () => {
-  return (handleNavbar.innerHTML = `
+  return (getNavbar.innerHTML = `
   <div class="navbar-container">
     <div class="navbar-logo">
       <a href="/index.html">
@@ -28,4 +28,4 @@ let navbar = () => {
   </div>`);
 };
 
-navbar()
+navbar();
