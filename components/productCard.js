@@ -64,29 +64,37 @@ const generateProductCard = () => {
     .map((product) => {
       let { id, name, desc, price, img, alt } = product;
       return `
-  <div class="item" id = product-id-${id}>
-  <img
-  style="max-height: 250px"
-    src=${img} alt=${alt}
-  />
-  <div class="item-name">
-    <h3>${name}</h3>
-  </div>
-  <div class="item-description">
-    <p>${desc}</p>
-  </div>
-  <div class="price-quantity">
-    <div class="price">$${price}</div>
-    <div class="button">
-    <button><i class="bi bi-dash-circle"></i></button>
-    <div id=${id} class="quantity">0</div>
-    <button><i class="bi bi-plus-circle"></i></i></button>
-  </div>
-  </div>
-</div>
+    <div id=product-id-${id} class="item">
+      <img max-height="250px" src=${img} alt=${alt}>
+      <div class="item-name">
+        <h3>${name}</h3>
+        <div class='item-description'>
+          <p>${desc}</p>
+        </div>
+        <div class="price-quantity">
+          <h2>$ ${price} </h2>
+          <div class="button">
+          <button><i class="bi bi-dash-circle" onclick="decrement()"></i></button>
+          <div id=${id} class="quantity">0</div>
+          <button><i class="bi bi-plus-circle" onclick="increment()"></i></i></button>
+        </div>
+        </div>
+      </div>
+    </div>
 `;
     })
     .join(""));
 };
 
 generateProductCard();
+
+//  The functions below update the quantity class in the above function
+const increment = () => {
+  console.log(" You pressed the Increment button");
+};
+
+const decrement = () => {
+  console.log(" You pressed the Decrement button");
+};
+
+const update = () => {};
