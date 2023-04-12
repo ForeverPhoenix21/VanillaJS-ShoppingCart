@@ -4,7 +4,7 @@ let getShop = document.getElementById("shop-container");
 let products = [
   {
     id: "Mens_shirt_ss",
-    color:"Black",
+    color: "Black",
     name: "El Capitan",
     quantity: 10,
     price: 30,
@@ -47,7 +47,8 @@ let products = [
     desc: "Classic Fit Long-Sleeve",
     img: "assets/apperal_images/alex-haigh-uHTSYUwXjLM-unsplash.jpg",
     alt: "Nothing to describe",
-  },  {
+  },
+  {
     id: "Mens_hoodie",
     name: "Mighty Hoodie",
     color: "White",
@@ -63,7 +64,7 @@ const generateProductCard = () => {
     .map((product) => {
       let { id, name, desc, price, img, alt } = product;
       return `
-  <div class="item" id = "product-id-" ${id}>
+  <div class="item" id = product-id-${id}>
   <img
   style="max-height: 250px"
     src=${img} alt=${alt}
@@ -78,7 +79,7 @@ const generateProductCard = () => {
     <div class="price">$${price}</div>
     <div class="button">
     <button><i class="bi bi-dash-circle"></i></button>
-    <div class="quantity">0</div>
+    <div id=${id} class="quantity">0</div>
     <button><i class="bi bi-plus-circle"></i></i></button>
   </div>
   </div>
