@@ -3,7 +3,7 @@ let getShop = document.getElementById("shop-container");
 
 let products = [
   {
-    id: "Mens_shirt_ss",
+    id: "El_Capitan_Mens_shirt_ss",
     color: "Black",
     name: "El Capitan",
     quantity: 10,
@@ -13,7 +13,7 @@ let products = [
     alt: "A picture of male model in the Mens Graphic Tee",
   },
   {
-    id: "Womens_shirt_ls",
+    id: "Lucky_Lady_Womens_shirt_ls",
     name: "Lucky Lady",
     color: "White",
     price: 45,
@@ -22,7 +22,7 @@ let products = [
     alt: "Nothing to describe",
   },
   {
-    id: "Mens_shirt_ss",
+    id: "Rock_Style_Mens_shirt_ss",
     name: "Rock Style",
     color: "White",
     price: 30,
@@ -31,7 +31,7 @@ let products = [
     alt: "Nothing to describe",
   },
   {
-    id: "Mens_shirt_ls",
+    id: "Calivera_Mens_shirt_ls",
     name: "Calivera",
     color: "White",
     price: 45,
@@ -40,7 +40,7 @@ let products = [
     alt: "Nothing to describe",
   },
   {
-    id: "Mens_shirt_ls",
+    id: "Triple_Down_Mens_shirt_ls",
     name: "Triple Down",
     color: "White",
     price: 45,
@@ -49,7 +49,7 @@ let products = [
     alt: "Nothing to describe",
   },
   {
-    id: "Mens_hoodie",
+    id: "Mighty_Hoodie_Mens_hoodie",
     name: "Mighty Hoodie",
     color: "White",
     price: 60,
@@ -58,6 +58,8 @@ let products = [
     alt: "Nothing to describe",
   },
 ];
+
+let basket = [];
 
 const generateProductCard = () => {
   return (getShop.innerHTML = products
@@ -91,12 +93,28 @@ generateProductCard();
 //  The functions below update the quantity class in the above function
 const increment = (id) => {
   let selectedItem = id;
-  console.log(selectedItem.id);
+
+  let findProduct = basket.find((product) => product.id === selectedItem.id);
+  if (findProduct === undefined) {
+    basket.push({
+      id: selectedItem.id,
+      item: 1,
+    });
+  } else {
+    findProduct.item += 1;
+  }
+  console.log(basket);
 };
 
 const decrement = (id) => {
   let selectedItem = id;
-  console.log(selectedItem.id);
+  let findProduct = basket.find((product) => product.id === selectedItem.id);
+  if (findProduct.item === 1) {
+    basket.pop(findProduct.id);
+  } else {
+    findProduct.item -= 1;
+  }
+  console.log(basket);
 };
 
 const update = () => {};
