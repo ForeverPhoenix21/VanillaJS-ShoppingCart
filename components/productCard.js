@@ -35,7 +35,7 @@ let products = [
     name: "Calivera",
     color: "White",
     price: 45,
-    desc: "Classic Fit Long-Sleeve",
+    desc: "Classic Long-Sleeve",
     img: "assets/apperal_images/alex-haigh-S9y9Z5gTWGY-unsplash.jpg",
     alt: "Nothing to describe",
   },
@@ -72,12 +72,12 @@ const generateProductCard = () => {
           <p>${desc}</p>
         </div>
         <div class="price-quantity">
-          <h2>$ ${price} </h2>
+          <h3>$ ${price} </h3>
           <div class="button">
-          <button><i class="bi bi-dash-circle" onclick="decrement()"></i></button>
-          <div id=${id} class="quantity">0</div>
-          <button><i class="bi bi-plus-circle" onclick="increment()"></i></i></button>
-        </div>
+            <button><i class="bi bi-dash-circle" onclick="decrement(${id})"></i></button>
+            <div id=${id} class="quantity">0</div>
+            <button><i class="bi bi-plus-circle" onclick="increment(${id})"></i></i></button>
+          </div>
         </div>
       </div>
     </div>
@@ -89,12 +89,14 @@ const generateProductCard = () => {
 generateProductCard();
 
 //  The functions below update the quantity class in the above function
-const increment = () => {
-  console.log(" You pressed the Increment button");
+const increment = (id) => {
+  let selectedItem = id;
+  console.log(selectedItem.id);
 };
 
-const decrement = () => {
-  console.log(" You pressed the Decrement button");
+const decrement = (id) => {
+  let selectedItem = id;
+  console.log(selectedItem.id);
 };
 
 const update = () => {};
