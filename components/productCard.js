@@ -104,6 +104,7 @@ const increment = (id) => {
     findProduct.item += 1;
   }
   console.log(basket);
+  update(selectedItem.id);
 };
 
 const decrement = (id) => {
@@ -116,6 +117,11 @@ const decrement = (id) => {
     findProduct.item -= 1;
   }
   console.log(basket);
+  update(selectedItem.id);
 };
 
-const update = () => {};
+const update = (id) => {
+  let findProduct = basket.find((product) => product.id === id);
+  console.log(findProduct);
+  document.getElementById(id).innerHTML = findProduct.item;
+};
