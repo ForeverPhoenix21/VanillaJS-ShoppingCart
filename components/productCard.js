@@ -109,9 +109,10 @@ const increment = (id) => {
 const decrement = (id) => {
   let selectedItem = id;
   let findProduct = basket.find((product) => product.id === selectedItem.id);
-  if (findProduct.item === 1) {
-    basket.pop(findProduct.id);
-  } else {
+  if (findProduct === undefined) return;
+
+  if (findProduct.item === 0) return;
+  else {
     findProduct.item -= 1;
   }
   console.log(basket);
